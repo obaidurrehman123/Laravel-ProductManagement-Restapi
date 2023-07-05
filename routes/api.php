@@ -22,7 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // product routes
 
 Route::get('/products', [ProductController::class, 'getAllProduct']);
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['middleware' => 'auth.api'], function () {
     Route::post('/addProduct',[ProductController::class,'addingProduct']);
     Route::delete('/deleteProduct/{id}', [ProductController::class, 'deleteProduct']);
 });
